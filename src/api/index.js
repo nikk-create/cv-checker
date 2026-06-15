@@ -97,7 +97,7 @@ Réponds UNIQUEMENT avec du JSON valide (sans markdown, sans backticks) :
   "suggestions": ["<conseil>"]
 }`;
 
-  const res = await fetch(`${SUPABASE_URL}/functions/v1/analyze-cv`, {
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/swift-function`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

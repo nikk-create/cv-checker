@@ -106,7 +106,7 @@ Réponds UNIQUEMENT avec du JSON valide (sans markdown, sans backticks) :
     body: JSON.stringify({ prompt }),
   });
 
-  const data = await res.json();
-  const raw = (data.content?.[0]?.text || "").replace(/```json|```/g, "").trim();
-  return JSON.parse(raw);
+  const raw = await res.text();
+  const clean = raw.replace(/```json|```/g, "").trim();
+  return JSON.parse(clean);
 }
